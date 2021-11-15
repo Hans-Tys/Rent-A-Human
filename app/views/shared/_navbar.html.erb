@@ -15,8 +15,8 @@
       <li class="dropdown">
       <a class="btn btn-ghost" href="#">Account</a>
       <ul class="dropdown-content">
-        <li><a href="#">Sign up</a></li>
-        <li><a href="#">Log in</a></li>
+        <li><%= link_to "Sign Up", new_user_registration_path %></li>
+        <li><%= link_to "Log in", new_user_session_path %></li>
         <% if user_signed_in? %>
           <li>
             <%= link_to "log-out", destroy_user_session_path, method: :delete %>
