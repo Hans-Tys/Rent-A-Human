@@ -3,5 +3,5 @@
  <%# <%= f.input :photo, as: :file %> %>
 
 <% @personas.each do |persona| %>
-  <p><%= persona.name %></p>
+  <p><%= link_to persona.name, persona_path(persona) %></p>
 <% end %>
