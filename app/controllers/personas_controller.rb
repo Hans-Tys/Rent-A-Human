@@ -3,7 +3,8 @@ class PersonasController < ApplicationController
   before_action :set_persona, only: [:show, :edit, :destroy]
 
   def index
-    @personas = Persona.all
+    # @personas = Persona.all
+    @personas = policy_scope(Persona).order(created_at: :desc)
   end
 
   def show
@@ -11,10 +12,13 @@ class PersonasController < ApplicationController
 
   def new
     @persona = Persona.new
+    authorize @persona
   end
 
   def create
     @persona = persona.new(persona_params)
+    @persona.user = current_user
+    authorize @persona
     if @persona.save
       redirect_to personas_path(@persona)
     else
@@ -27,6 +31,7 @@ class PersonasController < ApplicationController
 
   def update
     @persona.update(persona_params)
+    authorize @persona
   end
 
   def destroy
@@ -38,6 +43,7 @@ class PersonasController < ApplicationController
 
   def set_persona
     @persona = Persona.find(params[:id])
+    authorize @persona
   end
 
   def persona_params

@@ -14,7 +14,11 @@ class PersonaPolicy < ApplicationPolicy
   end
 
   def create?
-    return true
+    true
+  end
+
+  def show?
+    true
   end
 
   def edit?
