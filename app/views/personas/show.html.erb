@@ -3,6 +3,11 @@
   <li><%= @persona.name %></li>
   <li><%= @persona.location %></li>
   <li><%= @persona.description %></li>
+  <%if @persona.photo.attached? %>
+    <li><%= cl_image_tag( @persona.photo.key,
+      width: 400, height: 300, crop: :fill) %>
+    </li>
+  <% end %>
 </ul>
 
   <%= link_to 'add review', new_persona_review_path(@persona) %>
