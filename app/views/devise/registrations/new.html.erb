@@ -1,8 +1,15 @@
+<div class=container>
 <h2>Sign up</h2>
 
+<div class=signup-container>
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
 
+<%# <div class=left-container>
+<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/38816/image-from-rawpixel-id-542207-jpeg.png" alt="">
+</div> %>
+
+<div class=right-container>
   <div class="form-inputs">
     <%= f.input :first_name,
                 required: true %>
@@ -23,6 +30,9 @@
   <div class="form-actions">
     <%= f.button :submit, "Sign up" %>
   </div>
+  </div>
 <% end %>
+</div>
+</div>
 
 <%= render "devise/shared/links" %>
