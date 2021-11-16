@@ -1,2 +1,13 @@
 // Import page-specific CSS files here.
 @import "home";
+
+* {
+ box-sizing: border-box;
+}*:before,
+*:after {
+ box-sizing: border-box;
+}html,
+body {
+ height: 100%;
+ position: relative;
+}
