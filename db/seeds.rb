@@ -6,14 +6,3 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
-
-tina = User.new(
-  first_name: "tina",
-  last_name: "gouws",
-  email: "christine.gouws@gmail.com"
-)
-tina.save
-
-# hans = User.new(
-
-# )
