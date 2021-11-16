@@ -1,23 +1,23 @@
-<h1>show page</h1>
 
+<div class="card">
 
-<div class="show-container">
-</div>
-<ul>
-  <li><%= @persona.name %></li>
-  <li><%= @persona.location %></li>
-  <li><%= @persona.description %></li>
+<%# this is some info you can use %>
+  <h1><%= @persona.name %></h1>
+  <h3><%= @persona.location %></h3>
+  <h4><%= @persona.description %></h4>
+
+<%# this wil show all images just have to style them ;) %>
   <%if @persona.photo.attached? %>
-    <li><%= cl_image_tag( @persona.photo.key,
-      width: 400, height: 300, crop: :fill) %>
-    </li>
+      <% @persona.photo.each do |photo| %>
+      <%= cl_image_tag photo.key, height: 300, width: 200 %>
+      <%end %>
   <% end %>
-</ul>
-  <%= link_to 'add review', new_persona_review_path(@persona) %>
+
+<%# make these some nice buttons pls thanks :) %>
+  <%= link_to 'add review', new_booking_review_path(@persona) %>
   <%= link_to 'back', personas_path %>
 <%if current_user == @persona.user %>
   <%= link_to 'Delete', persona_path(@persona), method: :delete  %>
   <%= link_to 'Edit', edit_persona_path(@persona) %>
 <%end %>
-
 </div>

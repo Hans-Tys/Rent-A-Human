@@ -1,5 +1,6 @@
 .navbar-lewagon {
   justify-content: space-between;
+  align-items: center;
   background: white;
   height: 100px;
 }
@@ -18,12 +19,13 @@
 
 .dropdown {
   position: relative;
-  display: inline-block;
+  display: block;
 }
 
 .dropdown-content {
   display: none;
   position: absolute;
+  right: 0;
   background-color: #F9F9F9;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
@@ -37,4 +39,5 @@
 ul.dropdown-content {
   list-style-type: none;
   text-align: right;
+
 }
