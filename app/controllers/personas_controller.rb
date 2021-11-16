@@ -16,7 +16,7 @@ class PersonasController < ApplicationController
   end
 
   def create
-    @persona = persona.new(persona_params)
+    @persona = Persona.new(persona_params)
     @persona.user = current_user
     authorize @persona
     if @persona.save
