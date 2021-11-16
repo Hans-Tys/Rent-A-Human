@@ -1,0 +1,13 @@
+<h1>show page</h1>
+<ul>
+  <li><%= @persona.name %></li>
+  <li><%= @persona.location %></li>
+  <li><%= @persona.description %></li>
+</ul>
+
+  <%= link_to 'add review', new_persona_review_path(@persona) %>
+  <%= link_to 'back', personas_path %>
+<%if current_user == @persona.user %>
+  <%= link_to 'Delete', persona_path(@persona), method: :delete  %>
+  <%= link_to 'Edit', edit_persona_path(@persona) %>
+<%end %>
