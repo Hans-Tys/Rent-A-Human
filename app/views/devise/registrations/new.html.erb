@@ -1,9 +1,19 @@
-<h2>Sign up</h2>
+<div class="container">
+	<div class="card">
+		<div class="card-image">
+			<h2 class="card-heading">
+				Get started
+				<small>Create your account</small>
+			</h2>
+		</div>
 
+<form class="card-form">
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
+    <%= f.input :photo,
+                required: true %>
     <%= f.input :first_name,
                 required: true %>
     <%= f.input :last_name,
@@ -20,9 +30,12 @@
                 input_html: { autocomplete: "new-password" } %>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
-  </div>
+  <div class="action">
+		<button class="action-button">Sign up </button>
+	</div>
+  </form>
 <% end %>
+</div>
+</div>
 
-<%= render "devise/shared/links" %>
+<%# <%= render "devise/shared/links" %>
