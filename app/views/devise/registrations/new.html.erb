@@ -3,14 +3,17 @@
 		<div class="card-image">
 			<h2 class="card-heading">
 				Get started
-				<small>Let us create your account</small>
+				<small>Create your account</small>
 			</h2>
 		</div>
 
+<form class="card-form">
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
+    <%= f.input :photo,
+                required: true %>
     <%= f.input :first_name,
                 required: true %>
     <%= f.input :last_name,
@@ -28,13 +31,11 @@
   </div>
 
   <div class="action">
-		<button class="action-button"> <%= f.button :submit, "Sign up" %></button>
+		<button class="action-button">Sign up </button>
 	</div>
-
-
-  </div>
+  </form>
 <% end %>
 </div>
 </div>
 
-<%= render "devise/shared/links" %>
+<%# <%= render "devise/shared/links" %>
