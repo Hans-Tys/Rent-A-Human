@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+
+body {
+  font-family: "DM Sans", sans-serif;
+}
+
+.card {
+  margin: 2rem auto;
+  display: flex;
+  width: 100%;
+  max-width: 500px;
+  background-color: #FFF;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px 0 rgba(#999, .25);
+  padding: .75rem;
+}
+
+.card-image {
+  border-radius: 8px;
+  overflow: hidden;
+  padding-bottom: 65%;
+  background-image: url('https://assets.codepen.io/285131/coffee_1.jpg');
+  background-repeat: no-repeat;
+  background-size: 150%;
+  position: relative;
+}
+
+.card-heading {
+  position: absolute;
+  left: 10%;
+  top: 15%;
+  right: 10%;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #735400;
+
+  small {
+    display: block;
+    font-size: .75em;
+    font-weight: 400;
+    margin-top: .25em;
+  }
+}
+
+.card-form {
+  padding: 2rem 1rem 0;
+}
+
+.form-control {
+  border: 0;
+  border-bottom: 2px solid #eee;
+}
+
+.action-button {
+  font-size: 1.25rem;
+  padding: 1em;
+  width: 100%;
+  font-weight: 500;
+  background-color: #6658d3;
+  border-radius: 6px;
+  color: #FFF;
+  border: 0;
+
+  &:focus {
+    outline: 0;
+  }
+}
