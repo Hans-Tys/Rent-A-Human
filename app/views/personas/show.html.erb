@@ -1,23 +1,63 @@
 
-<div class="card">
+<div class="container-md bg-light col-9">
+<%# this wil show all images just have to style them ;) %>
+<div class="pictures">
+  <%# this is the big pic %>
+  <div class="big-pics">
+   <%if @persona.photo.attached? %>
+      <% @persona.photo.each do |photo| %>
+      <%= cl_image_tag photo.key, class: "pic-big" %>
+      <%end %>
+  <% end %>
+  </div>
+  <div class="small-pics">
+  <%# these are the 4 small pics %>
+   <%if @persona.photo.attached? %>
+      <% @persona.photo.each do |photo| %>
+      <%= cl_image_tag photo.key, class: "pic-small" %>
+      <%end %>
+  <% end %>
+    <%if @persona.photo.attached? %>
+      <% @persona.photo.each do |photo| %>
+      <%= cl_image_tag photo.key, class: "pic-small" %>
+      <%end %>
+  <% end %>
+    <%if @persona.photo.attached? %>
+      <% @persona.photo.each do |photo| %>
+      <%= cl_image_tag photo.key, class: "pic-small" %>
+      <%end %>
+  <% end %>
+    <%if @persona.photo.attached? %>
+      <% @persona.photo.each do |photo| %>
+      <%= cl_image_tag photo.key, class: "pic-small" %>
+      <%end %>
+  <% end %>
+  </div>
 
+</div>
+</div>
+
+<div class="container bg-light col-9 text">
+
+<div class="info col-7">
 <%# this is some info you can use %>
   <h1><%= @persona.name %></h1>
   <h3><%= @persona.location %></h3>
+</div>
+
+<div class="description col-6">
   <h4><%= @persona.description %></h4>
+</div>
 
-<%# this wil show all images just have to style them ;) %>
-  <%if @persona.photo.attached? %>
-      <% @persona.photo.each do |photo| %>
-      <%= cl_image_tag photo.key, height: 300, width: 200 %>
-      <%end %>
-  <% end %>
-
+<div class="form col-2">
+  <p>form here pls </p>
+</div>
 <%# make these some nice buttons pls thanks :) %>
   <%= link_to 'add review', new_booking_review_path(@persona) %>
   <%= link_to 'back', personas_path %>
-<%if current_user == @persona.user %>
-  <%= link_to 'Delete', persona_path(@persona), method: :delete  %>
-  <%= link_to 'Edit', edit_persona_path(@persona) %>
-<%end %>
+  <%if current_user == @persona.user %>
+    <%= link_to 'Delete', persona_path(@persona), method: :delete  %>
+    <%= link_to 'Edit', edit_persona_path(@persona) %>
+  <%end %>
+
 </div>
