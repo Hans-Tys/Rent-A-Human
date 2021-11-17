@@ -102,3 +102,28 @@ body {
     grid-template-columns: 1fr 1fr;
   }
 }
+
+.personas {
+ display: flex;
+ flex-wrap: wrap;
+}
+
+.persona-card {
+ display: flex;
+ width: 300px;
+ height: 300px;
+ box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+ border-radius: 8px;
+ background-color: yellowgreen;
+ margin: 16px;
+ justify-content: center;
+ align-items: center;
+ background-repeat: no-repeat;
+ background-size: cover;
+ a{
+   text-decoration: none;
+   color: white;
+   font-size: 24px;
+   font-weight: bold;
+ }
+}
