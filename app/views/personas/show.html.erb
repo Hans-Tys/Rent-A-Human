@@ -13,22 +13,30 @@
   <div class="small-pics">
   <%# these are the 4 small pics %>
 
+  <%if @persona.photo.attached? %>
+    <% @persona.photo.each do |photo| %>
+    <%= cl_image_tag photo.key, class: "pic-small" %>
+    <%end %>
   <% end %>
+
+  <%if @persona.photo.attached? %>
+    <% @persona.photo.third %>
+    <%= cl_image_tag photo.key, class: "pic-small" %>
+    <%end %>
+  <% end %>
+
     <%if @persona.photo.attached? %>
-      <% @persona.photo.each do |photo| %>
-      <%= cl_image_tag photo.key, class: "pic-small" %>
-      <%end %>
+    <% @persona.photo.each do |photo| %>
+    <%= cl_image_tag photo.key, class: "pic-small" %>
+    <%end %>
   <% end %>
+
     <%if @persona.photo.attached? %>
-      <% @persona.photo.each do |photo| %>
-      <%= cl_image_tag photo.key, class: "pic-small" %>
-      <%end %>
+    <% @persona.photo.each do |photo| %>
+    <%= cl_image_tag photo.key, class: "pic-small" %>
+    <%end %>
   <% end %>
-    <%if @persona.photo.attached? %>
-      <% @persona.photo.each do |photo| %>
-      <%= cl_image_tag photo.key, class: "pic-small" %>
-      <%end %>
-  <% end %>
+
   </div>
 
 </div>
@@ -41,11 +49,11 @@
   <div class="info">
   <%# this is some info you can use %>
     <h1><%= @persona.name %></h1>
-    <h3><%= @persona.location %></h3>
+    <p>Location: <%= @persona.location %></p>
   </div>
 
   <div class="description ">
-    <h4><%= @persona.description %></h4>
+    <p>Description:<br><%= @persona.description %></p>
   </div>
 </div>
 

@@ -10,7 +10,7 @@
     height: 35vh;
     margin: 8px;
     width: 250px;
-
+    border-radius: 0 8px 8px 0;
     border-radius: 8px;
     object-fit: cover;
   }
@@ -19,15 +19,13 @@
     width: inherit;
     object-fit: cover;
     background-position: center;
-    border-radius: 8px;
+    border-radius: 8px 0 0 8px;
   }
 }
 .big-pics {
   height: 72vh;
   margin: 8px 8px 0 0;
   width: 550px;
-
-  border-radius: 8px;
 }
 
 .small-pics {
@@ -36,15 +34,13 @@
   height: 50vh;
   margin: 0 0 0 8px;
   width: 550px;
-
 }
 
 .info {
-  background-color: lawngreen;
-
   h1 {
     font-family: "DM Sans", sans-serif;
     text-decoration: underline;
+    margin-bottom: 16px;
   }
 
 }
@@ -53,11 +49,10 @@
 .description {
   height: 300px;
   margin: 8px 0;
-  background-color: lemonchiffon;
 
   p {
     font-family: "DM Sans", sans-serif;
-    font-size: 8px;
+    font-size: 16px;
   }
 
 }
