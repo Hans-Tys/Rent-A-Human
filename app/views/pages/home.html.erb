@@ -1,23 +1,27 @@
-<div class="search__container">
-    <p class="search__title">
-        Go ahead, hover over search
-    </p>
-    <input class="search__input" type="text" placeholder="Search">
-</div>
 
-<div class="container col-10">
-<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-</div>
-
-<div class="cards">
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-    Rent an adventure buddy
+<div class="container">
+  <div class="search__container">
+      <p class="search__title">
+      don't be shy, look through our humans...
+      </p>
+      <input class="search__input" type="text" placeholder="Search">
   </div>
 
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg)">
-    Rent a prom date
-  </div>
-</div>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=image_path("lost.jpg")%>)">
+      Looking for someone?
+      </div>
 
+      <div class="cards-container">
+        <div class="small-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=image_path("couple.jpeg")%>)">
+         <a href= ""> Rent a family </a>
+        </div>
 
+        <div class="small-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=image_path("prom_date.jpeg")%>)">
+          <a href ="">Rent a prom date </a>
+        </div>
+
+        <div class="small-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=image_path("party.jpeg")%>)">
+          <a href="">Rent a party> </a>
+        </div>
+      </div>
 </div>

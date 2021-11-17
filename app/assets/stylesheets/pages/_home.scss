@@ -1,5 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:400,700,900');
 
+.container {
+// position: relative;
+overflow: auto;
+min-height: 100vh;
+display: flex;
+flex-direction: column;
+}
+
+body {
+  background-color: #FFF3E4;
+}
+
 .search__container {
   width: 430px;
   margin: 0 auto;
