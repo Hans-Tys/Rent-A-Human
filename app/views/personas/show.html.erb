@@ -1,15 +1,26 @@
 
 <div class="container-md bg-light">
 <%# this wil show all images just have to style them ;) %>
+  <div class="pictures">
+  <div class="big-pics">
   <%if @persona.photos.attached? %>
-      <% @persona.photos.each do |photo| %>
-      <%= cl_image_tag photo.key, height: 300, width: 200 %>
-      <%end %>
+      <%= cl_image_tag @persona.photos.first.key, class: "pic-big" %>
   <% end %>
   </div>
   <div class="small-pics">
   <%# these are the 4 small pics %>
-
+  <%if @persona.photos.attached? %>
+      <%= cl_image_tag @persona.photos.second.key, class: "pic-small" %>
+  <% end %>
+  <%if @persona.photos.attached? %>
+      <%= cl_image_tag @persona.photos.third.key, class: "pic-small" %>
+  <% end %>
+  <%if @persona.photos.attached? %>
+      <%= cl_image_tag @persona.photos.fourth.key, class: "pic-small" %>
+  <% end %>
+  <%if @persona.photos.attached? %>
+      <%= cl_image_tag @persona.photos.fifth.key, class: "pic-small" %>
+  <% end %>
   </div>
 
 </div>
