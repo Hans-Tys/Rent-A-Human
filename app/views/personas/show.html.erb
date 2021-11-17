@@ -1,5 +1,5 @@
 
-<div class="container-md bg-light col-9">
+<div class="container-md bg-light">
 <%# this wil show all images just have to style them ;) %>
 <div class="pictures">
   <%# this is the big pic %>
@@ -37,21 +37,27 @@
 </div>
 </div>
 
-<div class="container bg-light col-9 text">
 
-<div class="info col-7">
-<%# this is some info you can use %>
-  <h1><%= @persona.name %></h1>
-  <h3><%= @persona.location %></h3>
+<div class="container bg-light d-flex flex-row">
+
+<div class="col-8 m-0">
+  <div class="info">
+  <%# this is some info you can use %>
+    <h1><%= @persona.name %></h1>
+    <h3><%= @persona.location %></h3>
+  </div>
+
+  <div class="description ">
+    <h4><%= @persona.description %></h4>
+  </div>
 </div>
 
-<div class="description col-6">
-  <h4><%= @persona.description %></h4>
-</div>
-
-<div class="form col-2">
+<div class="form col-3">
   <p>form here pls </p>
 </div>
+
+</div>
+
 <%# make these some nice buttons pls thanks :) %>
   <%= link_to 'add review', new_booking_review_path(@persona) %>
   <%= link_to 'back', personas_path %>
@@ -59,5 +65,3 @@
     <%= link_to 'Delete', persona_path(@persona), method: :delete  %>
     <%= link_to 'Edit', edit_persona_path(@persona) %>
   <%end %>
-
-</div>

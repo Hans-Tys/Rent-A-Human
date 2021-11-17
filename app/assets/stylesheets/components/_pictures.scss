@@ -41,28 +41,31 @@
 
 .info {
   background-color: lawngreen;
-  margin: 8px 0;
+
   h1 {
     font-family: "DM Sans", sans-serif;
     text-decoration: underline;
-
   }
+
 }
 
 
-  .description {
-    height: 100px;
-    margin: 8px 0;
-    background-color: lemonchiffon;
+.description {
+  height: 300px;
+  margin: 8px 0;
+  background-color: lemonchiffon;
+
+  p {
+    font-family: "DM Sans", sans-serif;
+    font-size: 8px;
   }
 
+}
 
-  .form {
+
+.form {
     background-color: lightcoral;
-    height: 500px;
-  }
-
-  .text {
-    display: flex;
-    flex: 1fr 1fr;
-  }
+    height: 400px;
+    margin: 0 auto;
+    text-align: center;
+}
