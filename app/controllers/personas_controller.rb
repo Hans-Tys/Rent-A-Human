@@ -53,6 +53,6 @@ class PersonasController < ApplicationController
   end
 
   def persona_params
-    params.require(:persona).permit(:name, :description, :location, :activity, :photo)
+    params.require(:persona).permit(:name, :description, :location, :activity, photos: [])
   end
 end
