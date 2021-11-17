@@ -1,4 +1,4 @@
-<h1>Personas page</h1>
+
 <div id="map"
      style="width: 100%; height: 600px;"
      data-markers="<%= @markers.to_json %>"
@@ -6,7 +6,11 @@
 </div>
 
 <div class="container col-10">
-  <% @personas.each do |persona| %>
-    <p class="card"><%= link_to persona.name, persona_path(persona) %></p>
-  <% end %>
+  <div class="personas">
+    <% @personas.each do |persona| %>
+      <div class="persona-card" style="background-image:radial-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path persona.photos.first.key%>')">
+        <%= link_to persona.name, persona_path(persona) %>
+      </div>
+    <% end %>
+  </div>
 </div>
