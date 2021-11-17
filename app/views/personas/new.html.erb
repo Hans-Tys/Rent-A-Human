@@ -15,11 +15,7 @@
       <%= f.input :description, required: true %>
       <%= f.input :location, required: true  %>
       <%= f.input :activity, required: true %>
-      <%= f.input :photo, as: :file, required: true %>
-      <%= f.input :photo, as: :file, required: true %>
-      <%= f.input :photo, as: :file, required: true %>
-      <%= f.input :photo, as: :file, required: true %>
-      <%= f.input :photo, as: :file, required: true %>
+      <%= f.input :photos, as: :file, input_html: { multiple: true }, required: true %>
     </div>
 
     <div class="form-actions">
