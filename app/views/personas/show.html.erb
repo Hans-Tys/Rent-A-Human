@@ -12,10 +12,7 @@
   </div>
   <div class="small-pics">
   <%# these are the 4 small pics %>
-   <%if @persona.photo.attached? %>
-      <% @persona.photo.each do |photo| %>
-      <%= cl_image_tag photo.key, class: "pic-small" %>
-      <%end %>
+
   <% end %>
     <%if @persona.photo.attached? %>
       <% @persona.photo.each do |photo| %>
