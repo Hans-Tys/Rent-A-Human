@@ -51,6 +51,17 @@ body {
   border-bottom: 2px solid #eee;
 }
 
+.form-inputs {
+  margin: 30px 10px 30px 10px;
+}
+
+.form-control-file {
+  background-color: orange;
+  border-radius: 6px;
+  color: #FFF;
+  border: 0;
+}
+
 .action-button {
   font-size: 1.25rem;
   padding: 1em;

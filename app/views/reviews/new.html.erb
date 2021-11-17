@@ -1,3 +1,24 @@
-<h1>new page for review</h1>
+<div class="container">
+  <div class="card">
 
-<%# pls add form here %>
+    <div class="card-image">
+			<h2 class="card-heading">
+				Leave a review
+				<small>How was your experience with humans?</small>
+			</h2>
+		</div>
+
+    <%= simple_form_for [@booking @review] do |f| %>
+
+    <div class="form-inputs">
+      <%= f.input :review, required: true %>
+      <%= f.input :comment, required: true %>
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :submit, "Submit" ,class: "action-button" %>
+    </div>
+
+  </div>
+  <% end %>
+</div>
