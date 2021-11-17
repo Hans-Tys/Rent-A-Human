@@ -7,8 +7,8 @@
   <h4><%= @persona.description %></h4>
 
 <%# this wil show all images just have to style them ;) %>
-  <%if @persona.photo.attached? %>
-      <% @persona.photo.each do |photo| %>
+  <%if @persona.photos.attached? %>
+      <% @persona.photos.each do |photo| %>
       <%= cl_image_tag photo.key, height: 300, width: 200 %>
       <%end %>
   <% end %>
