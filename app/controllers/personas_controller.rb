@@ -5,6 +5,12 @@ class PersonasController < ApplicationController
   def index
     # @personas = Persona.all
     @personas = policy_scope(Persona).order(created_at: :desc)
+    @markers = @personas.geocoded.map do |persona|
+      {
+        lat: persona.latitude,
+        lng: persona.longitude
+      }
+    end
   end
 
   def show
