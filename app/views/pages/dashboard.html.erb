@@ -7,15 +7,15 @@
     	    <p><%= link_to persona.name, persona_path(persona) %></p>
         </div>
         <div class="dashboard-reviews">
-        <div class="review">
-
-        </div>
-         <div class="review">
-
-        </div>
-         <div class="review">
-
-        </div>
+        <% @reviews.each do |review| %>
+        <% if review.booking.persona.name == persona.name %>
+          <div class="review p-1">
+           <h3><%= review.booking.user.first_name %></h3>
+           <p><%= review.rating %>/5</p>
+           <p><%= review.comment %></p>
+          </div>
+          <%end %>
+        <% end %>
         </div>
       </div>
       <% end %>
