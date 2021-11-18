@@ -1,12 +1,12 @@
 <div class="index-container bg-white">
 
-<div id="map"
-     class="map"
-     style="width: 40%; height: 90vh;"
-     data-markers="<%= @markers.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+<div class="map-container">
+  <div id="map"
+      style="width: 100%; height: 90vh;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
 </div>
-
 
   <div class="personas">
     <% @personas.each do |persona| %>
@@ -22,7 +22,7 @@
       </div>
     <% end %>
 
-
-
   </div>
 </div>
+  <div style="width: 100%; height: 100vh; background-color: red;" >
+  </div>
