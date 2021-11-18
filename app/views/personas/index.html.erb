@@ -1,6 +1,7 @@
 <div class="index-container bg-white">
+
 <div id="map"
-     class="sticky-top"
+     class="map"
      style="width: 40%; height: 90vh;"
      data-markers="<%= @markers.to_json %>"
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
@@ -20,6 +21,7 @@
         </a>
       </div>
     <% end %>
+
 
 
   </div>

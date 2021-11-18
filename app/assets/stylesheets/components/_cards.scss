@@ -57,7 +57,7 @@ body {
   font-size: 24px;
   font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  // box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   opacity: 90%;
   border-radius: 5%;
   &:hover {
@@ -113,23 +113,24 @@ body {
 }
 
 .persona-card {
- display: flex;
- width: 900px;
- height: 250px;
- box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
- margin: 16px;
- align-items: center;
- background-repeat: no-repeat;
- background-size: cover;
+  display: flex;
+  width: 900px;
+  height: 250px;
+//  box-shadow: rgba(149, 157, 165, 0.1) 0px 8px 24px;
+  border-bottom:0.1px solid rgba(211, 210, 210, 0.544);
+  border-top:0.1px solid rgba(211, 210, 210, 0.544);
+  align-items: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 
- a{
+  a{
    text-decoration: none;
    color: black;
    font-size: 24px;
    font-weight: bold;
- }
+  }
 
- .card-img{
+  .card-img{
    width: 300px;
    object-fit: cover;
    height: 230px;
@@ -137,7 +138,7 @@ body {
    border-radius: 5px;
    background-size: cover;
    background-repeat: no-repeat;
- }
+  }
 }
 
 .card-info{
