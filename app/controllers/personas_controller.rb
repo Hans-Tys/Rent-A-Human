@@ -13,12 +13,9 @@ class PersonasController < ApplicationController
     end
     if params[:query].present?
       @personas = Persona.where("name ILIKE ?", "%#{params[:query]}%")
-    else
-      @personas = Persona.all
-    end
 
-    if params[:query].present?
-      @personas = Persona.where(activity: "%#{params[:query]}%")
+    elsif params[:activity].present?
+      @personas = Persona.where("activity ILIKE ?", "%#{params[:activity]}%")
     else
       @personas = Persona.all
     end

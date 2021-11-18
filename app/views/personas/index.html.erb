@@ -9,15 +9,16 @@
 </div>
 
   <div class="personas">
-    <div class="index-search"></div>
-    <%= form_tag personas_path, method: :get do %>
-    <%= text_field_tag :query,
-      params[:query],
-      class: "search__input",
-      placeholder: "Search",
-      type: "text"
-    %>
-    <% end %>
+    <div class="search__container">
+          <%= form_tag personas_path, method: :get do %>
+          <%= text_field_tag :query,
+            params[:query],
+            class: "search__input",
+            placeholder: "Search",
+            type: "text"
+          %>
+      <% end %>
+      </div>
 
     <% @personas.each do |persona| %>
       <div class="persona-card">

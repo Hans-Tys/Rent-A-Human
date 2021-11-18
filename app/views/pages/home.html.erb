@@ -4,14 +4,14 @@
       <p class="search__title">
       Looking for someone?
       </p>
-      <%= form_tag personas_path, method: :get do %>
-      <%= text_field_tag :query,
-        params[:query],
-        class: "search__input",
-        placeholder: "Search",
-        type: "text"
-      %>
-      <% end %>
+        <%= form_tag personas_path, method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "search__input",
+          placeholder: "Search",
+          type: "text"
+        %>
+        <% end %>
       <%= link_to 'Our personas', personas_path, class: "btn-salmon" %>
    </div>
   </div>
@@ -21,27 +21,27 @@
   <%# <div class="col-10"> %>
       <div class="cards-container">
         <div class="small-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%=image_path("couple.jpg")%>')">
-         <a href= "http://localhost:3000/personas?query=family&commit=Search"> Rent a family </a>
+         <a href= "http://localhost:3000/personas?activity=family&commit=Search"> Rent a family </a>
         </div>
 
         <div class="small-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%=image_path("prom_date.jpg")%>')">
-          <a href ="http://localhost:3000/personas?query=prom+date&commit=Search">Rent a promdate </a>
+          <a href ="http://localhost:3000/personas?activity=prom+date&commit=Search">Rent a promdate </a>
         </div>
 
         <div class="small-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%=image_path("party.jpg")%>')">
-          <a href="http://localhost:3000/personas?query=party&commit=Search">Rent a party </a>
+          <a href="http://localhost:3000/personas?activity=party&commit=Search">Rent a party </a>
         </div>
 
         <div class="small-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%=image_path("girlfriend.jpg")%>')">
-          <a href="http://localhost:3000/personas?query=girlfriend&commit=Search">Rent a girlfriend </a>
+          <a href="http://localhost:3000/personas?activity=girlfriend&commit=Search">Rent a girlfriend </a>
         </div>
 
         <div class="small-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%=image_path("boyfriend.jpg")%>')">
-          <a href="http://localhost:3000/personas?query=boyfriend&commit=Search">Rent a boyfriend </a>
+          <a href="http://localhost:3000/personas?activity=boyfriend&commit=Search">Rent a boyfriend </a>
         </div>
 
         <div class="small-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%=image_path("party.jpg")%>')">
-          <a href="http://localhost:3000/personas?query=wizard&commit=Search">Rent a wizard </a>
+          <a href="http://localhost:3000/personas?activity=wizard&commit=Search">Rent a wizard </a>
         </div>
       <%# </div> %>
   <%# </div> %>
