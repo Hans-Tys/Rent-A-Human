@@ -2,6 +2,8 @@ class Persona < ApplicationRecord
   belongs_to :user
   has_many :bookings
   has_many_attached :photos
+  has_many :reviews, through: :bookings
+
 
   validates :name, presence: true
   validates :description, presence: true, length: { maximum: 500,

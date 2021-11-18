@@ -24,6 +24,7 @@ class PersonasController < ApplicationController
   def show
     @booking = Booking.new
     @bookings = Booking.all
+    @reviews = Review.all
   end
 
   def new
