@@ -9,7 +9,8 @@
 </div>
 
   <div class="personas">
-    <div class="search__container">
+
+    <div class="search__container_horizontal">
           <%= form_tag personas_path, method: :get do %>
           <%= text_field_tag :query,
             params[:query],
@@ -17,23 +18,35 @@
             placeholder: "Search",
             type: "text"
           %>
-      <% end %>
-      </div>
+        <% end %>
+        <div class="buttons_index">
+          <a href= "http://localhost:3000/personas?activity=family&commit=Search" class = "btn-blue"> Family </a>
+          <a href ="http://localhost:3000/personas?activity=prom+date&commit=Search" class = "btn-blue"> Promdate </a>
+          <a href="http://localhost:3000/personas?activity=party&commit=Search" class = "btn-blue"> Party </a>
+          <a href="http://localhost:3000/personas?activity=wizard&commit=Search" class = "btn-blue">Wizard </a>
+          <a href="http://localhost:3000/personas?activity=boyfriend&commit=Search" class = "btn-blue">Boyfriend </a>
+          <a href="http://localhost:3000/personas?activity=girlfriend&commit=Search" class = "btn-blue">Girlfriend </a>
+        </div>
+    </div>
 
-    <% @personas.each do |persona| %>
-      <div class="persona-card">
-        <a href="<%= persona_path(persona) %>">
-        <div class="card-img" style="background-image:url('<%= cl_image_path persona.photos.first.key%>')">
-        </div>
-        <div class="card-info">
-         <%= link_to persona.name, persona_path(persona) %>
-         <%= persona.location %>
-         <p><%= persona.description %></p>
-        </div>
-        </a>
-      </div>
-    <% end %>
+
+<div id= "highlighted-card"> </div>
+  <div class = "personas_container">
   </div>
-</div>
+      <% @personas.each do |persona| %>
+        <div class="persona-card" data-persona-id="<%= persona.id %>" >
+          <a href="<%= persona_path(persona) %>">
+          <div class="card-img" style="background-image:url('<%= cl_image_path persona.photos.first.key%>')">
+          </div>
+          <div class="card-info">
+          <%= link_to persona.name, persona_path(persona) %>
+          <%= persona.location %>
+          <p><%= persona.description %></p>
+          </div>
+          </a>
+        </div>
+      <% end %>
+    </div>
+  </div>
   <div style="width: 100%; height: 100vh; background-color: red;" >
-  </div>
+</div>

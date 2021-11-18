@@ -8,7 +8,9 @@ class PersonasController < ApplicationController
     @markers = @personas.geocoded.map do |persona|
       {
         lat: persona.latitude,
-        lng: persona.longitude
+        lng: persona.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { persona: persona }),
+        id: persona.id
       }
     end
     if params[:query].present?
