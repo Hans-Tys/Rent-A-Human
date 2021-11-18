@@ -15,7 +15,7 @@ class BookingsController < ApplicationController
     authorize @booking
   end
 
-  def destory
+  def destroy
     @booking = Booking.find(params[id])
     @booking.destroy
     redirect_to personas_path

@@ -8,10 +8,10 @@
 			</h2>
 		</div>
 
-    <%= simple_form_for [@booking @review] do |f| %>
+    <%= simple_form_for [@booking, @review] do |f| %>
 
     <div class="form-inputs">
-      <%= f.input :review, required: true %>
+      <%= f.input :rating, required: true %>
       <%= f.input :comment, required: true %>
     </div>
 
