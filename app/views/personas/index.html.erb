@@ -1,14 +1,21 @@
 <div class="index-container bg-white">
-
-<div id="map"
-     class="map"
-     style="width: 40%; height: 90vh;"
-     data-markers="<%= @markers.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-</div>
-
-
+  <div id="map"
+      class="map"
+      style="width: 40%; height: 90vh;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
   <div class="personas">
+    <div class="index-search"></div>
+    <%= form_tag personas_path, method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "search__input",
+      placeholder: "Search",
+      type: "text"
+    %>
+    <% end %>
+
     <% @personas.each do |persona| %>
       <div class="persona-card">
         <a href="<%= persona_path(persona) %>">
@@ -21,8 +28,5 @@
         </a>
       </div>
     <% end %>
-
-
-
   </div>
 </div>
