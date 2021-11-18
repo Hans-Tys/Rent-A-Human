@@ -46,7 +46,6 @@
 
   <%# buttons %>
    <div class="buttons">
-    <%= link_to 'add review', new_booking_review_path(@persona), class: "btn-blue" %>
     <%= link_to 'back', personas_path, class: "btn-blue"  %>
     <%if current_user == @persona.user %>
       <%= link_to 'Delete', persona_path(@persona), method: :delete , class: "btn-blue"   %>
@@ -58,6 +57,7 @@
   <%# should show bookings if there are any %>
     <% @bookings.each do |booking| %>
       <p><%= booking %></p>
+      <%= link_to 'add review', new_booking_review_path(booking), class: "btn-blue" %>
     <% end %>
 
   </div>
