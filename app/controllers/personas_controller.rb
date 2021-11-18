@@ -11,6 +11,14 @@ class PersonasController < ApplicationController
         lng: persona.longitude
       }
     end
+    if params[:query].present?
+      @personas = Persona.where("name ILIKE ?", "%#{params[:query]}%")
+
+    elsif params[:activity].present?
+      @personas = Persona.where("activity ILIKE ?", "%#{params[:activity]}%")
+    else
+      @personas = Persona.all
+    end
   end
 
   def show
