@@ -2,11 +2,12 @@
   justify-content: space-between;
   align-items: center;
   background: white;
-  height: 10vh;
+  height: 8vh;
   position: sticky;
   width: 100%;
   top: 0;
   z-index: 99;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -19,6 +20,15 @@
 
 .nav-link {
   text-decoration: underline;
+    a {
+      color: #ff8b88;
+      text-decoration: none;
+    }
+
+    :hover {
+      color: #f75e59;
+      text-decoration: none;
+    }
 }
 
 .dropdown {
@@ -34,6 +44,17 @@
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   padding: 12px 16px;
+  color: #ff8b88;
+
+   a{
+     color: #ff8b88;
+     text-decoration: none;
+   }
+
+   :hover {
+     color: #f75e59;
+     text-decoration: none;
+   }
 }
 
 .dropdown:hover .dropdown-content {

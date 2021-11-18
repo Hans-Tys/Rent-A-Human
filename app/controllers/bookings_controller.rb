@@ -11,7 +11,8 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.persona = @persona
     @booking.save
-    redirect_to personas_path
+    flash[:notice] = 'Booking created!'
+    redirect_to persona_path(@persona)
     authorize @booking
   end
 
