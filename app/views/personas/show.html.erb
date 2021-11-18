@@ -69,15 +69,5 @@
   <% end %>
 </div>
 
-<div class=card>
-  <% @bookings.each do |booking| %>
-  <% if booking.persona == @persona %>
-  <%= booking.user.first_name %>
-  <%= link_to 'add review', new_booking_review_path(booking), class: "btn-blue" %>
-  <% end %>
-
-
-  <% end %>
-</div>
 
 </div>
