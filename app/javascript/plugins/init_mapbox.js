@@ -56,8 +56,15 @@ const openInfoWindow = (markers) => {
 
 const toggleCardHighlighting = (event) => {
   // We select the card corresponding to the marker's id
-  console.log(document.querySelector(`[data-persona-id="${event.currentTarget.dataset.markerId}"]`))
+  // console.log(document.querySelector(`[data-persona-id="${event.currentTarget.dataset.markerId}"]`))
+  const hightlightedCard = document.querySelector("#highlighted-card");
   const card = document.querySelector(`[data-persona-id="${event.currentTarget.dataset.markerId}"]`);
+  hightlightedCard.innerHTML = '';
+
+  hightlightedCard.append(card);
+
+  // card.remove()
+  // console.log(card)
   // Then we toggle the class "highlight github" to the card
   card.classList.toggle('highlight');
 }
