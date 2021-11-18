@@ -1,6 +1,6 @@
 class PersonasController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
-  before_action :set_persona, only: [:show, :edit, :destroy]
+  before_action :set_persona, only: [:show, :edit, :update, :destroy]
 
   def index
     # @personas = Persona.all
@@ -26,6 +26,7 @@ class PersonasController < ApplicationController
   def show
     @booking = Booking.new
     @bookings = Booking.all
+    @reviews = Review.all
   end
 
   def new
@@ -48,8 +49,9 @@ class PersonasController < ApplicationController
   end
 
   def update
-    @persona.update(persona_params)
+    @persona.update(persona_edit_params)
     authorize @persona
+    redirect_to persona_path(@persona)
   end
 
   def destroy
@@ -66,5 +68,9 @@ class PersonasController < ApplicationController
 
   def persona_params
     params.require(:persona).permit(:name, :description, :location, :activity, photos: [])
+  end
+
+  def persona_edit_params
+    params.require(:persona).permit(:name, :description, :location, :activity)
   end
 end

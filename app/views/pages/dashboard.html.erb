@@ -1,1 +1,57 @@
-<h1>dashboard</h1>
+<div class="container-m bg-white col-12">
+  <%if current_user.personas.length > 0%>
+  <div class="bookings">
+    <% @personas.each do |persona| %>
+      <% if persona.user == current_user %>
+      <div class="dashboard-card">
+        <div class="dashboard-img" style="background-image:url('<%= cl_image_path persona.photos.first.key%>')">
+    	    <p><%= link_to persona.name, persona_path(persona) %></p>
+        </div>
+        <div class="dashboard-reviews">
+        <% @bookings.each do |booking| %>
+        <% if booking.persona.name == persona.name %>
+          <div class="booking p-1">
+          <div class="d-flex align-items-center justify-content-between">
+            <h3><%= booking.user.first_name %></h3>
+            <div class="d-flex align-items-end">
+              <h4><strong>from:</strong> </h4>
+              <p><%= booking.start_date %></p>
+            </div>
+             <div class="d-flex align-items-end">
+             <h4><strong>to:</strong> </h4>
+              <p><%= booking.end_date %></p>
+            </div>
+          </div>
+          </div>
+          <%end %>
+        <% end %>
+        </div>
+      </div>
+      <% end %>
+    <% end %>
+  </div>
+  <%end %>
+
+  <h2 class="p-4">Outgoing bookings</h2>
+  <div class="outgoing">
+
+  <% @bookings.each do |booking| %>
+    <% if booking.user == @user %>
+      <div class="booking-card">
+        <h2 style="border-bottom: 1px solid grey;"><%= booking.persona.name %></h2>
+          <div class="d-flex align-items-end">
+            <h4><strong>from:</strong> </h4>
+            <p><%= booking.start_date %></p>
+          </div>
+           <div class="d-flex align-items-end">
+           <h4><strong>to:</strong> </h4>
+           <p><%= booking.end_date %></p>
+          </div>
+        <div class="pt-4"><%= link_to 'add review', new_booking_review_path(booking), class: "btn-salmon" %></div>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
+  </div>
+</div>
