@@ -8,6 +8,17 @@
  box-sizing: border-box;
 }html,
 body {
- height: 100%;
  position: relative;
+ display: flex;
+ flex-direction: column;
+ justify-content: space-between;
+}
+
+.map-container {
+  width: 40%;
+  #map{
+    height: 90vh;
+    position: sticky;
+    top: 10vh;
+  }
 }
