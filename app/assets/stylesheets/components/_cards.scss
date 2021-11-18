@@ -5,11 +5,12 @@ body {
 }
 
 .card-category {
-  margin: 20px;
+  // margin: 20px;
   background-size: cover;
   background-position: bottom;
   background-size: 120%;
-  height: 500px;
+  height: 90vh;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,7 +19,7 @@ body {
   font-size: 24px;
   font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
+  // border-radius: 10px;
 }
 
 .cards-container {
@@ -32,6 +33,8 @@ body {
  background-position: center;
  height: 300px;
  display: flex;
+ flex-wrap: wrap;
+ justify-content: center;
  align-items: center;
  color: white;
  font-size: 24px;
@@ -47,14 +50,14 @@ body {
   background-size: cover;
   background-position: center;
   height: 100%;
-  width: 100%;
+  width: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 24px;
   font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  // box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   opacity: 90%;
   border-radius: 5%;
   &:hover {
@@ -105,25 +108,43 @@ body {
 
 .personas {
  display: flex;
- flex-wrap: wrap;
+ flex-direction: column;
+ padding: 0;
 }
 
 .persona-card {
- display: flex;
- width: 300px;
- height: 300px;
- box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
- border-radius: 8px;
- background-color: yellowgreen;
- margin: 16px;
- justify-content: center;
- align-items: center;
- background-repeat: no-repeat;
- background-size: cover;
- a{
+  display: flex;
+  width: 900px;
+  height: 250px;
+//  box-shadow: rgba(149, 157, 165, 0.1) 0px 8px 24px;
+  border-bottom:0.1px solid rgba(211, 210, 210, 0.544);
+  border-top:0.1px solid rgba(211, 210, 210, 0.544);
+  align-items: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  a{
    text-decoration: none;
-   color: white;
+   color: black;
    font-size: 24px;
    font-weight: bold;
- }
+  }
+
+  .card-img{
+   width: 300px;
+   object-fit: cover;
+   height: 230px;
+   margin: 10px;
+   border-radius: 5px;
+   background-size: cover;
+   background-repeat: no-repeat;
+  }
+}
+
+.card-info{
+  height: inherit;
+  width: 600px;
+  padding: 10px;
+  color: black;
+  overflow: hidden;
 }
