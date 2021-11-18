@@ -1,4 +1,5 @@
 <div class="container-m bg-white col-12">
+  <%if current_user.personas.length > 0%>
   <div class="bookings">
     <% @personas.each do |persona| %>
       <% if persona.user == current_user %>
@@ -7,12 +8,20 @@
     	    <p><%= link_to persona.name, persona_path(persona) %></p>
         </div>
         <div class="dashboard-reviews">
-        <% @reviews.each do |review| %>
-        <% if review.booking.persona.name == persona.name %>
-          <div class="review p-1">
-           <h3><%= review.booking.user.first_name %></h3>
-           <p><%= review.rating %>/5</p>
-           <p><%= review.comment %></p>
+        <% @bookings.each do |booking| %>
+        <% if booking.persona.name == persona.name %>
+          <div class="booking p-1">
+          <div class="d-flex align-items-center justify-content-between">
+            <h3><%= booking.user.first_name %></h3>
+            <div class="d-flex align-items-end">
+              <h4><strong>from:</strong> </h4>
+              <p><%= booking.start_date %></p>
+            </div>
+             <div class="d-flex align-items-end">
+             <h4><strong>to:</strong> </h4>
+              <p><%= booking.end_date %></p>
+            </div>
+          </div>
           </div>
           <%end %>
         <% end %>
@@ -20,5 +29,29 @@
       </div>
       <% end %>
     <% end %>
+  </div>
+  <%end %>
+
+  <h2 class="p-4">Outgoing bookings</h2>
+  <div class="outgoing">
+
+  <% @bookings.each do |booking| %>
+    <% if booking.user == @user %>
+      <div class="booking-card">
+        <h2 style="border-bottom: 1px solid grey;"><%= booking.persona.name %></h2>
+          <div class="d-flex align-items-end">
+            <h4><strong>from:</strong> </h4>
+            <p><%= booking.start_date %></p>
+          </div>
+           <div class="d-flex align-items-end">
+           <h4><strong>to:</strong> </h4>
+           <p><%= booking.end_date %></p>
+          </div>
+        <div class="pt-4"><%= link_to 'add review', new_booking_review_path(booking), class: "btn-salmon" %></div>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
   </div>
 </div>
