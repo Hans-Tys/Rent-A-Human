@@ -4,7 +4,8 @@ class Persona < ApplicationRecord
   has_many_attached :photos
 
   validates :name, presence: true
-  validates :description, presence: true
+  validates :description, presence: true, length: { maximum: 500,
+    too_long: "%{count} characters is the maximum allowed" }
   validates :location, presence: true
   validates :activity, presence: true
 

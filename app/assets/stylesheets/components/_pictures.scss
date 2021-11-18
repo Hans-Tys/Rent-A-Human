@@ -10,7 +10,7 @@
     height: 35vh;
     margin: 8px;
     width: 250px;
-    border-radius: 8px;
+    border-radius: 5px;
     object-fit: cover;
   }
   .pic-big {
@@ -18,7 +18,7 @@
     width: inherit;
     object-fit: cover;
     background-position: center;
-    border-radius: 8px;
+    border-radius: 5px;
   }
 }
 .big-pics {
@@ -38,8 +38,21 @@
 .info {
   h1 {
     font-family: "DM Sans", sans-serif;
-    text-decoration: underline;
     margin-bottom: 16px;
+  }
+  .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  i{
+    font-size: 30px;
+  }
+
+  .location {
+    display: flex;
+    align-items: center;
   }
 
 }
@@ -58,8 +71,23 @@
 
 
 .form {
-    background-color: lightcoral;
-    height: 400px;
-    margin: 0 auto;
-    text-align: center;
+
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  height: 300px;
+  margin: 16px auto;
+  text-align: center;
+  border:0.5px solid rgba(211, 211, 211, 0.589);
+  border-radius: 5px;
+
+}
+
+.buttons {
+  height: 50px;
+  a{
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: none;
+    color: #4a4a4a;
+  }
 }

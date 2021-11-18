@@ -1,5 +1,5 @@
 
-<div class="container-md bg-light">
+<div class="container-md bg-white">
 <%# this wil show all images just have to style them ;) %>
   <div class="pictures">
   <div class="big-pics">
@@ -27,30 +27,60 @@
 </div>
 
 
-<div class="container bg-light d-flex flex-row">
+<div class="container-md bg-white d-flex flex-row">
 
 <div class="col-8 m-0">
   <div class="info">
   <%# this is some info you can use %>
+  <div class="title">
     <h1><%= @persona.name %></h1>
-    <p>Location: <%= @persona.location %></p>
+    <%= cl_image_tag @persona.user.photo.key, class: "avatar-large" %>
+  </div>
+    <hr>
+    <p><i class="fas fa-street-view m-2 pr-3 "></i><%= @persona.location %></p>
   </div>
 
   <div class="description ">
-    <p>Description:<br><%= @persona.description %></p>
+    <p><%= @persona.description %></p>
+  </div>
+
+  <%# buttons %>
+   <div class="buttons">
+    <%= link_to 'add review', new_booking_review_path(@persona), class: "btn-blue" %>
+    <%= link_to 'back', personas_path, class: "btn-blue"  %>
+    <%if current_user == @persona.user %>
+      <%= link_to 'Delete', persona_path(@persona), method: :delete , class: "btn-blue"   %>
+      <%= link_to 'Edit', edit_persona_path(@persona),  class: "btn-blue"  %>
+    <%end %>
+  </div>
+
+  <div>
+  <%# should show bookings if there are any %>
+    <% @bookings.each do |booking| %>
+      <p><%= booking %></p>
+    <% end %>
+
   </div>
 </div>
 
 <div class="form col-3">
-  <p>form here pls </p>
+      <%= simple_form_for [@persona, @booking] do |f| %>
+
+    <div class="form-inputs">
+      <%= f.input :start_date, as: :date, html5: true, required: true %>
+      <%= f.input :end_date, as: :date, html5: true, required: true %>
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :submit, "Book" ,class: "action-button" %>
+    </div>
+
+  </div>
+  <% end %>
 </div>
 
 </div>
+
+
 
 <%# make these some nice buttons pls thanks :) %>
-  <%= link_to 'add review', new_booking_review_path(@persona) %>
-  <%= link_to 'back', personas_path %>
-  <%if current_user == @persona.user %>
-    <%= link_to 'Delete', persona_path(@persona), method: :delete  %>
-    <%= link_to 'Edit', edit_persona_path(@persona) %>
-  <%end %>
