@@ -1,1 +1,24 @@
-<h1>dashboard</h1>
+<div class="container-m bg-white col-12">
+  <div class="bookings">
+    <% @personas.each do |persona| %>
+      <% if persona.user == current_user %>
+      <div class="dashboard-card">
+        <div class="dashboard-img" style="background-image:url('<%= cl_image_path persona.photos.first.key%>')">
+    	    <p><%= link_to persona.name, persona_path(persona) %></p>
+        </div>
+        <div class="dashboard-reviews">
+        <div class="review">
+
+        </div>
+         <div class="review">
+
+        </div>
+         <div class="review">
+
+        </div>
+        </div>
+      </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>

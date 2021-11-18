@@ -1,3 +1,28 @@
-<h1>edit page</h1>
+<div class="container">
+  <div class="card">
 
-<%# pls add edit form here  %>
+    <div class="card-image">
+			<h2 class="card-heading">
+				Get started
+				<small>edit your Persona</small>
+			</h2>
+		</div>
+        <%= @persona.name %>
+
+    <%= simple_form_for @persona do |f| %>
+
+    <div class="form-inputs">
+      <%= f.input :name, required: true %>
+      <%= f.input :description, required: true %>
+      <%= f.input :location, required: true  %>
+      <%= f.input :activity, required: true %>
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :submit, "Create" ,class: "action-button" %>
+    </div>
+
+
+  </div>
+  <% end %>
+</div>
