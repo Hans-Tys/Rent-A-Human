@@ -15,10 +15,30 @@ body {
 }
 
 .map-container {
-  width: 40%;
+  width: 200%;
   #map{
     height: 90vh;
     position: sticky;
     top: 10vh;
+  }
+}
+
+.search__container_horizontal {
+  width: 100%;
+  margin: 0 20px;
+  font-family: 'Raleway', sans-serif;
+  margin-bottom: 10px;
+  align-items: left;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  a {
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: none;
+  }
+  .search__input {
+    width: 360px;
   }
 }
