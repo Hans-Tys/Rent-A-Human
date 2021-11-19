@@ -69,4 +69,11 @@
   <% end %>
 </div>
 
+  <% @persona.bookings.each do |booking| %>
+    <div class="card">
+     <p><%= "⭐" * booking.review.rating %></p>
+     <%= booking.review.comment %>
+    </div>
+  <% end %>
+
 </div>
