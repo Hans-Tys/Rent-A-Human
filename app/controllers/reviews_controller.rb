@@ -11,7 +11,7 @@ class ReviewsController < ApplicationController
     @review.booking = @booking
     authorize @review
     if @review.save
-      redirect_to personas_path
+      redirect_to persona_path(@booking.persona)
     else
       render :new
     end
