@@ -1,6 +1,6 @@
 
 <div class="pop-up">
-  <%= cl_image_tag persona.photos.first.key%>
+  <%= cl_image_tag persona.photos.first.key if persona.photos.attached?%>
   <div class="details">
     <h2><%= persona.name %></h2>
     <p><%= persona.location%></p>

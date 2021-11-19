@@ -24,4 +24,8 @@
   display: flex;
   justify-content: space-between;
   margin-right: 15px;
+  img {
+    background-size: cover;
+    object-fit: cover;
+  }
 }
