@@ -1,4 +1,5 @@
 <div class="container-m bg-white col-12">
+<h2 class="p-4">Incoming bookings</h2>
   <%if current_user.personas.length > 0%>
   <div class="bookings">
     <% @personas.each do |persona| %>
@@ -47,7 +48,12 @@
            <h4><strong>to:</strong> </h4>
            <p><%= booking.end_date %></p>
           </div>
-        <div class="pt-4"><%= link_to 'add review', new_booking_review_path(booking), class: "btn-salmon" %></div>
+        <div class="links">
+          <%= link_to 'Add review', new_booking_review_path(booking), class: "btn-salmon" %>
+          <% if booking.review == false %>
+            <%= link_to 'cancel', booking_path(booking), method: :delete , class: "btn-salmon"%>
+          <% end %>
+        </div>
       </div>
     <% end %>
   <% end %>
