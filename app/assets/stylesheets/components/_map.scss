@@ -3,12 +3,25 @@
 }
 
 .mapboxgl-popup-content {
-  text-align: center;
-  font-family: 'Open Sans', sans-serif;
+  text-align:center;
+  font-family: sans-serif;
+  width: 350px;
+  h2 {
+    color:#ff8b88;
+  }
+  img {
+    height: 140px;
+    width: 170px;
+    border-radius: 5px;
+  }
 }
 
 .highlight {
-  border: solid 1px;
-  opacity: 0.6;
-  box-shadow: gray;
+  border: solid 2px #ff8b88;
+}
+
+.pop-up {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 15px;
 }
