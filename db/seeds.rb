@@ -35,7 +35,10 @@ activities = ["girlfriend", "boyfriend", "family", "prom date", "party", "wizard
     activity: activities.sample,
     user: users.sample
   )
-  5.times do
+  file = URI.open('  https://source.unsplash.com/1600x900/?person')
+  persona.photos.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+
+  4.times do
     file = URI.open('https://picsum.photos/200/300')
     persona.photos.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
   end
