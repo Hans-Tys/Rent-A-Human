@@ -7,9 +7,7 @@
       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 </div>
-
-  <div class="personas">
-
+<div>
     <div class="search__container_horizontal">
           <%= form_tag personas_path, method: :get do %>
           <%= text_field_tag :query,
@@ -28,6 +26,8 @@
           <a href="http://localhost:3000/personas?activity=girlfriend&commit=Search" class = "btn-blue">Girlfriend </a>
         </div>
     </div>
+  <div class="personas">
+
 
 
 <div id= "highlighted-card"> </div>
@@ -40,13 +40,12 @@
           </div>
           <div class="card-info">
           <%= link_to persona.name, persona_path(persona) %>
-          <%= persona.location %>
-          <p><%= persona.description %></p>
+          <p id="location"><%= persona.location %></p>
           </div>
           </a>
         </div>
       <% end %>
     </div>
   </div>
-  <div style="width: 100%; height: 100vh; background-color: red;" >
+</div>
 </div>

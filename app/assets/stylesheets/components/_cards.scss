@@ -112,12 +112,13 @@ background-color: white;
  display: flex;
  flex-direction: column;
  padding: 0;
+ overflow: hidden;
 }
 
 .persona-card {
   display: flex;
   width: 600px;
-  height: 250px;
+  height: 150px;
 //  box-shadow: rgba(149, 157, 165, 0.1) 0px 8px 24px;
   border-bottom:0.1px solid rgba(211, 210, 210, 0.544);
   border-top:0.1px solid rgba(211, 210, 210, 0.544);
@@ -133,9 +134,9 @@ background-color: white;
   }
 
   .card-img{
-   width: 300px;
+   width: 170px;
    object-fit: cover;
-   height: 230px;
+   height: 140px;
    margin: 10px;
    border-radius: 5px;
    background-size: cover;
@@ -147,6 +148,11 @@ background-color: white;
   height: inherit;
   width: 600px;
   padding: 10px;
-  color: black;
   overflow: hidden;
+  #location{
+    color: grey;
+  }
+  a{
+    color: #ff8b88;
+  }
 }

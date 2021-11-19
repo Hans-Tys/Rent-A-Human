@@ -48,6 +48,9 @@
 .buttons_index {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
-  width: 600px;
+  font-size: 10px;
+  gap:8px;
+  .btn-blue {
+    margin-left: 8px;
+  }
 }
