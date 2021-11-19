@@ -36,12 +36,12 @@
       <% @personas.each do |persona| %>
         <div class="persona-card" data-persona-id="<%= persona.id %>" >
           <a href="<%= persona_path(persona) %>">
-          <div class="card-img" style="background-image:url('<%= cl_image_path persona.photos.first.key%>')">
-          </div>
-          <div class="card-info">
-          <%= link_to persona.name, persona_path(persona) %>
-          <p id="location"><%= persona.location %></p>
-          </div>
+            <div class="card-img" style="background-image:url('<%= cl_image_path persona.photos.first.key%>')">
+            </div>
+            <div class="card-info">
+              <%= link_to persona.name, persona_path(persona) %>
+              <p id="location"><i class="fas fa-street-view "><%= persona.location %></p>
+            </div>
           </a>
         </div>
       <% end %>
