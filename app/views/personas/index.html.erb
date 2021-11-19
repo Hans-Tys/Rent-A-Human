@@ -36,7 +36,7 @@
       <% @personas.each do |persona| %>
         <div class="persona-card" data-persona-id="<%= persona.id %>" >
           <a href="<%= persona_path(persona) %>">
-            <div class="card-img" style="background-image:url('<%= cl_image_path persona.photos.first.key%>')">
+            <div class="card-img" style="background-image:url('<%= cl_image_path persona.photos.first.key if persona.photos.attached?%>')">
             </div>
             <div class="card-info">
               <%= link_to persona.name, persona_path(persona) %>

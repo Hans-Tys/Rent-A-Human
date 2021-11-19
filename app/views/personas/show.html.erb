@@ -1,28 +1,20 @@
 <div class="container-md bg-white">
 <%# this wil show all images just have to style them ;) %>
   <div class="pictures">
-  <div class="big-pics">
   <%if @persona.photos.attached? %>
-      <%= cl_image_tag @persona.photos.first.key, class: "pic-big" %>
+    <div class="big-pics">
+        <%= cl_image_tag @persona.photos.first.key, class: "pic-big" %>
+    </div>
+    <div class="small-pics">
+      <%# these are the 4 small pics %>
+      <%= cl_image_tag @persona.photos.second.key, class: "pic-small" if @persona.photos.length >= 2 %>
+      <%= cl_image_tag @persona.photos.third.key, class: "pic-small" if @persona.photos.length >= 3 %>
+      <%= cl_image_tag @persona.photos.fourth.key, class: "pic-small" if @persona.photos.length >= 4 %>
+      <%= cl_image_tag @persona.photos.fifth.key, class: "pic-small" if @persona.photos.length >= 5 %>
+    </div>
   <% end %>
-  </div>
-  <div class="small-pics">
-  <%# these are the 4 small pics %>
-  <%if @persona.photos.attached? %>
-      <%= cl_image_tag @persona.photos.second.key, class: "pic-small" %>
-  <% end %>
-  <%if @persona.photos.attached? %>
-      <%= cl_image_tag @persona.photos.third.key, class: "pic-small" %>
-  <% end %>
-  <%if @persona.photos.attached? %>
-      <%= cl_image_tag @persona.photos.fourth.key, class: "pic-small" %>
-  <% end %>
-  <%if @persona.photos.attached? %>
-      <%= cl_image_tag @persona.photos.fifth.key, class: "pic-small" %>
-  <% end %>
-  </div>
-
 </div>
+
 
 
 
@@ -70,7 +62,7 @@
   </div>
   <% end %>
 </div>
-
+<% if @persona.bookings.length > 0%>
 <div class="container mt-5 mb-5">
 
  <div class="col-md-12 d-flex">
@@ -80,7 +72,7 @@
     <div class="card-review" style="width: 300px;">
     <div class="user-content">
     <%= cl_image_tag booking.user.photo.key, class: "avatar-review" %>
-     <p><%= "⭑" * booking.review.rating %></p>
+     <p><%= "⭐" * booking.review.rating %></p>
      <%= booking.review.comment %>
     </div>
     </div>
@@ -90,6 +82,7 @@
   </div>
 
 </div>
+<% end %>
 
 
 </div>
