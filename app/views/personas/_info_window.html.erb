@@ -1,2 +1,8 @@
-<h2><%= persona.name %></h2>
-<p><%= persona.location%></p>
+
+<div class="pop-up">
+  <%= cl_image_tag persona.photos.first.key%>
+  <div class="details">
+    <h2><%= persona.name %></h2>
+    <p><%= persona.location%></p>
+  </div>
+</div>
