@@ -39,18 +39,20 @@
     <p><i class="fas fa-street-view m-2 pr-3 "></i><%= @persona.location %></p>
   </div>
 
-  <div class="description ">
+  <div class="description">
     <p><%= @persona.description %></p>
-  </div>
-
-  <%# buttons %>
-   <div class="buttons">
+    <br>
+    <div class="buttons">
     <%= link_to 'back', personas_path, class: "btn-blue"  %>
     <%if current_user == @persona.user %>
       <%= link_to 'Delete', persona_path(@persona), method: :delete , class: "btn-blue"   %>
       <%= link_to 'Edit', edit_persona_path(@persona),  class: "btn-blue"  %>
     <%end %>
   </div>
+  </div>
+
+  <%# buttons %>
+
 </div>
 
 <div class="form col-3">
@@ -69,13 +71,25 @@
   <% end %>
 </div>
 
+<div class="container mt-5 mb-5">
+
+ <div class="col-md-12 d-flex">
+
   <% @persona.bookings.each do |booking| %>
-    <div class="card">
     <% if booking.review %>
-     <p><%= "⭐" * booking.review.rating %></p>
+    <div class="card-review" style="width: 300px;">
+    <div class="user-content">
+    <%= cl_image_tag booking.user.photo.key, class: "avatar-review" %>
+     <p><%= "⭑" * booking.review.rating %></p>
      <%= booking.review.comment %>
-    <% end %>
     </div>
+    </div>
+    <% end %>
   <% end %>
+  </div>
+  </div>
+
+</div>
+
 
 </div>
