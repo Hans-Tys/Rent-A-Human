@@ -58,7 +58,7 @@ const toggleCardHighlighting = (event) => {
   // We select the card corresponding to the marker's id
   // console.log(document.querySelector(`[data-persona-id="${event.currentTarget.dataset.markerId}"]`))
   const hightlightedCard = document.querySelector("#highlighted-card");
-  const card = document.querySelector(`[data-persona-id="${event.currentTarget.dataset.markerId}"]`);
+  const card = document.querySelector(`[data-persona-id="${event.currentTarget.dataset.markerId}"]`).cloneNode(true);
   hightlightedCard.innerHTML = '';
 
   hightlightedCard.append(card);
