@@ -14,6 +14,9 @@
   flex-grow: 0;
 }
 
+.navbar-brand {
+  display: flex;
+}
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }

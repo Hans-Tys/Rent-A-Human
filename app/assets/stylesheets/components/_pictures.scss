@@ -59,7 +59,7 @@
 
 
 .description {
-  height: 300px;
+  height: 200px;
   margin: 8px 0;
 
   p {
@@ -83,6 +83,7 @@
 
 .buttons {
   height: 50px;
+  margin-right: 70px;
   a{
     text-decoration: none;
   }
@@ -90,4 +91,10 @@
     text-decoration: none;
     color: #4a4a4a;
   }
+}
+
+
+.btn-blue {
+  margin-left: -2px;
+  margin-right: 20px;
 }
